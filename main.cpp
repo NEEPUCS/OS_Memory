@@ -173,7 +173,7 @@ void showPartSpeTab(MemoryLinkList pl)
 */
 void showUsableForm(MemoryLinkList pl)
 {
-    printf("\n\t\t\t可用表\n");
+    printf("\n\t\t\t\t可用表\n");
     printf("\t----------------------------------\t\n");
     printf("\t  区号\t分区长度\t\t起始地址\n");
     printf("\t----------------------------------\t\n");
@@ -206,7 +206,7 @@ void callBack(MemoryLinkList pl3, MemoryLinkList &pl)
                 pl3->size += pl3->prior->size;
                 pl3->start = pl3->prior->start;
                 pl3->state = 0;
-                pl3->ID = 0;
+//                pl3->ID = 0;
                 if (pl3->prior->prior)
                 {
                     pl3->prior->prior->next = pl3;
@@ -227,7 +227,7 @@ void callBack(MemoryLinkList pl3, MemoryLinkList &pl)
             {
                 pl3->size += pl3->next->size;
                 pl3->state = 0;
-                pl3->ID = 0;
+//                pl3->ID = 0;
                 if (pl3->next->next)
                 {
                     pl3->next->next->prior = pl3;
@@ -248,7 +248,7 @@ void callBack(MemoryLinkList pl3, MemoryLinkList &pl)
                 {
                     pl3->size += pl3->next->size;
                     pl3->state = 0;
-                    pl3->ID = 0;
+//                    pl3->ID = 0;
                     if (pl3->next->next)
                         pl3->next->next->prior = pl3;
                     pl3->next = pl3->next->next;
@@ -268,7 +268,7 @@ void callBack(MemoryLinkList pl3, MemoryLinkList &pl)
                 {
                     pl3->size += pl3->prior->size;
                     pl3->state = 0;
-                    pl3->ID = 0;
+//                    pl3->ID = 0;
                     pl3->start = pl->start;
                     if (pl3->prior->prior)
                     {
@@ -295,7 +295,7 @@ void callBack(MemoryLinkList pl3, MemoryLinkList &pl)
             {
                 pl3->size = pl3->size + pl3->next->size + pl3->prior->size;
                 pl3->state = 0;
-                pl3->ID = 0;
+//                pl3->ID = 0;
                 pl3->start = pl3->prior->start;
                 if (pl3->next->next)
                     pl3->next->next->prior = pl3;
@@ -384,7 +384,7 @@ void firstFit(MemoryLinkList block_first, int n)
                     pl2 = (Memory *)malloc(sizeof(Memory));
                     pl2->start = pl1->start + After_Sort[m].size;
                     pl2->state = 0;
-                    pl2->ID = 0;
+//                    pl2->ID = 0;
                     pl2->size = pl1->size - After_Sort[m].size;
                     if (pl2->size > 5)
                     {
